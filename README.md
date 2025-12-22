@@ -18,9 +18,9 @@ Use [Claude.ai](https://claude.ai) with this special skill to generate professio
 
 > ⚠️ Requires Claude Pro, Max, Team, or Enterprise plan
 
-1. Download the skill files (right click Save As): [`SKILL.md`](architecture-diagram-skill/SKILL.md) and [`template.html`](architecture-diagram-skill/assets/template.html)
+1. Download [`architecture-diagram.zip`](architecture-diagram.zip)
 2. Go to [claude.ai](https://claude.ai) → **Settings** → **Capabilities** → **Skills**
-3. Click **+ Add** and upload both files
+3. Click **+ Add** and upload the zip file
 4. Toggle the skill on
 
 📚 Need help? See the [full installation guide](#-installation) below.
@@ -153,18 +153,16 @@ Create an architecture diagram for a microservices system with:
 
 ### Claude.ai (Recommended)
 
-1. Go to **Settings** → **Capabilities** → scroll down to **Skills**
-2. Click **+ Add**
-3. Upload the `SKILL.md` file and the `assets/template.html` file
+1. Download [`architecture-diagram.zip`](architecture-diagram.zip)
+2. Go to **Settings** → **Capabilities** → scroll down to **Skills**
+3. Click **+ Add** and upload the zip file
 4. Toggle the skill on
 
 ![Claude Skills Settings](examples/images/claude-skills-settings.png)
 
 ### Claude.ai Projects (Alternative)
 
-1. In your Claude.ai Project, add the files to the Project Knowledge:
-   - `SKILL.md`
-   - `assets/template.html`
+1. In your Claude.ai Project, upload the [`architecture-diagram.zip`](architecture-diagram.zip) to the Project Knowledge
 
 ### Claude Code CLI
 
@@ -172,10 +170,10 @@ Extract to your skills directory:
 
 ```bash
 # Global skills
-unzip architecture-diagram-skill.zip -d ~/.claude/skills/
+unzip architecture-diagram.zip -d ~/.claude/skills/
 
 # Or project-local
-unzip architecture-diagram-skill.zip -d ./.claude/skills/
+unzip architecture-diagram.zip -d ./.claude/skills/
 ```
 
 ### Manual Setup
@@ -183,7 +181,7 @@ unzip architecture-diagram-skill.zip -d ./.claude/skills/
 Simply ensure both files are accessible to Claude:
 
 ```
-architecture-diagram-skill/
+architecture-diagram/
 ├── SKILL.md              # Skill instructions
 └── assets/
     └── template.html     # Base template
