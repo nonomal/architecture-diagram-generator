@@ -33,6 +33,7 @@ Use these semantic colors for component types:
 | Database | `rgba(76, 29, 149, 0.4)` | `#a78bfa` (violet-400) |
 | AWS/Cloud | `rgba(120, 53, 15, 0.3)` | `#fbbf24` (amber-400) |
 | Security | `rgba(136, 19, 55, 0.4)` | `#fb7185` (rose-400) |
+| Message Bus | `rgba(251, 146, 60, 0.3)` | `#fb923c` (orange-400) |
 | External/Generic | `rgba(30, 41, 59, 0.5)` | `#94a3b8` (slate-400) |
 
 ### Typography
@@ -77,6 +78,48 @@ Font sizes: 12px for component names, 9px for sublabels, 8px for annotations, 7p
 ```
 
 **Auth/security flows:** Dashed lines in rose color (`#fb7185`).
+
+**Message buses / Event buses:** Small connector elements between services. Use orange color (`#fb923c` stroke, `rgba(251, 146, 60, 0.3)` fill):
+```svg
+<rect x="X" y="Y" width="120" height="20" rx="4" fill="rgba(251, 146, 60, 0.3)" stroke="#fb923c" stroke-width="1"/>
+<text x="CENTER_X" y="Y+14" fill="#fb923c" font-size="7" text-anchor="middle">Kafka / RabbitMQ</text>
+```
+
+### Spacing Rules
+
+**CRITICAL:** When stacking components vertically, ensure proper spacing to avoid overlaps:
+
+- **Standard component height:** 60px for services, 80-120px for larger components
+- **Minimum vertical gap between components:** 40px
+- **Inline connectors (message buses):** Place IN the gap between components, not overlapping
+
+**Example vertical layout:**
+```
+Component A: y=70,  height=60  → ends at y=130
+Gap:         y=130 to y=170   → 40px gap, place bus at y=140 (20px tall)
+Component B: y=170, height=60  → ends at y=230
+```
+
+**Wrong:** Placing a message bus at y=160 when Component B starts at y=170 (causes overlap)
+**Right:** Placing a message bus at y=140, centered in the 40px gap (y=130 to y=170)
+
+### Legend Placement
+
+**CRITICAL:** Place legends OUTSIDE all boundary boxes (region boundaries, cluster boundaries, security groups).
+
+- Calculate where all boundaries end (y position + height)
+- Place legend at least 20px below the lowest boundary
+- Expand SVG viewBox height if needed to accommodate
+
+**Example:**
+```
+Kubernetes Cluster: y=30, height=460 → ends at y=490
+Legend should start at: y=510 or below
+SVG viewBox height: at least 560 to fit legend
+```
+
+**Wrong:** Legend at y=470 inside a cluster boundary that ends at y=490
+**Right:** Legend at y=510, below the cluster boundary, with viewBox height extended
 
 ### Layout Structure
 
