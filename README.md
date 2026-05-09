@@ -7,6 +7,7 @@ Use [Claude.ai](https://claude.ai) with this special skill to generate professio
 - **No design skills needed** — just describe your architecture in plain English
 - **Iterate quickly** — ask Claude to add components, change layouts, or update styles
 - **Share easily** — output is a single HTML file, no special software required
+- **Export built in** — Copy / PNG / PDF buttons baked into every diagram
 
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -16,11 +17,11 @@ Use [Claude.ai](https://claude.ai) with this special skill to generate professio
 
 ### Step 1: Install the Skill
 
-> ⚠️ Requires Claude Pro, Max, Team, or Enterprise plan
+> ⚠️ Available on Free, Pro, Max, Team, and Enterprise plans (Code Execution must be enabled in **Settings → Capabilities** first)
 
 1. Download [`architecture-diagram.zip`](architecture-diagram.zip)
-2. Go to [claude.ai](https://claude.ai) → **Settings** → **Capabilities** → **Skills**
-3. Click **+ Add** and upload the zip file
+2. Go to [claude.ai](https://claude.ai) → **Customize** → **Skills**
+3. Click the **+** button → **+ Create skill** → **Upload a skill**, then upload the zip file
 4. Toggle the skill on
 
 📚 Need help? See the [full installation guide](#-installation) below.
@@ -127,12 +128,22 @@ Create an architecture diagram for a microservices system with:
 
 ![Microservices Architecture](examples/images/microservices.png)
 
+## 📤 Export your diagram
+
+Open the HTML file in any modern browser and use the toolbar in the header:
+
+- **📋 Copy** — copy a high-resolution PNG to your clipboard, paste straight into Slides, Docs, or Slack
+- **🖼️ PNG** — download a high-resolution PNG file (great for slides and screenshots)
+- **📄 PDF** — download a PDF that preserves the dark theme
+
+No install. No command line. Just open the file and click.
+
 ## ✨ Features
 
 - **Beautiful dark theme** — Slate-950 background with subtle grid pattern
 - **Semantic color coding** — Consistent colors for frontend, backend, database, cloud, and security components
 - **Self-contained output** — Single HTML file with embedded CSS and inline SVG
-- **No dependencies** — Opens in any modern browser, no JavaScript required
+- **Works in any browser** — nothing to install, just open the file
 - **Professional typography** — JetBrains Mono for that technical aesthetic
 - **Smart layering** — Arrows render cleanly behind component boxes
 
@@ -149,18 +160,20 @@ Create an architecture diagram for a microservices system with:
 
 ## 📦 Installation
 
-> ⚠️ **Requires:** Claude Pro, Max, Team, or Enterprise plan
+> ⚠️ **Available on:** Free, Pro, Max, Team, and Enterprise plans
+>
+> **Prerequisite:** Code Execution must be enabled before you can upload a custom skill:
+> - Free / Pro / Max — turn on under **Settings → Capabilities**
+> - Team / Enterprise — admin enables under **Organization settings → Skills**
 
-> 📚 **New to Claude Skills?** Check out the official guide: [Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
+> 📚 **New to Claude Skills?** Check out the official guide: [Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
 
 ### Claude.ai (Recommended)
 
 1. Download [`architecture-diagram.zip`](architecture-diagram.zip)
-2. Go to **Settings** → **Capabilities** → scroll down to **Skills**
-3. Click **+ Add** and upload the zip file
-4. Toggle the skill on
-
-![Claude Skills Settings](examples/images/claude-skills-settings.png)
+2. Go to **Customize** → **Skills**
+3. Click the **+** button, then **+ Create skill**, then **Upload a skill**
+4. Choose the zip file and toggle the skill on
 
 ### Claude.ai Projects (Alternative)
 
